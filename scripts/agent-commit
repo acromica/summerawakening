@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# Commit an agent pass with provenance trailers.
+# usage: scripts/agent-commit --pass PASS --model MODEL --harness claude-code|codex --files "path1 dir2 ..." \
+#                             [--todo t3,t4] [--directive "..."] [--session ID] -m "summary" [-b "body"]
+# Only the named paths (plus prompts/) are staged. The commit is refused if anything else is
+# already staged, or if the author committed after this pass's preflight: the author's work
+# must never be absorbed into an agent commit. Pass rules are enforced by .githooks/commit-msg.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+pass="" model="" harness="" todo="" directive="" msg="" body="" files="" session=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --pass) pass="$2"; shift 2;;
+    --model) model="$2"; shift 2;;
+    --harness) harness="$2"; shift 2;;
+    --todo) todo="$2"; shift 2;;
+    --directive) directive="$2"; shift 2;;
+    --files) files="$files $2"; shift 2;;
+    --session) session="$2"; shift 2;;
+    -m) msg="$2"; shift 2;;
+    -b) body="$2"; shift 2;;
+    *) echo "unknown arg $1"; exit 2;;
+  esac
+done
+die() { echo "agent-commit: $*" >&2; exit 2; }
+[ -n "$pass" ] && [ -n "$msg" ] || die "need --pass and -m"
+[ "$pass" = "author-edit" ] && die "agents may not use Pass: author-edit"
+[ -n "$model" ] || die "need --model (your exact model name)"
+case "$harness" in claude-code|codex) ;; *) die "need --harness claude-code or codex";; esac
+[ -n "${files// /}" ] || die "need --files with the paths this pass changed (directories are fine)"
+
+# 1. Nothing unrelated may already be staged.
+# shellcheck disable=SC2086
+pre=$(git diff --cached --name-only -- . $(for f in $files; do printf ":(exclude)%s " "$f"; done) ':(exclude)prompts/')
+[ -z "$pre" ] || die "files outside --files are already staged (author work?): $(echo $pre). Unstage them or ask the author."
+
+# 2. The author must not have committed since this pass started.
+mark="$(git rev-parse --git-dir)/workbench/preflight-head"
+if [ -f "$mark" ]; then
+  start=$(cat "$mark")
+  if git merge-base --is-ancestor "$start" HEAD 2>/dev/null; then
+    authored=$(git log --format=%h --grep='^Pass: author-edit' "$start..HEAD")
+    [ -z "$authored" ] || die "the author committed during this pass ($authored). Re-run preflight and re-check your changes against theirs."
+  else
+    die "HEAD moved off the preflight revision $start (branch switch or reset). Re-run scripts/agent-preflight."
+  fi
+fi
+
+# 3. Stage only what was named.
+# shellcheck disable=SC2086
+git add -A -- $files
+[ -d prompts ] && git add -A -- prompts
+if git diff --cached --quiet; then echo "Nothing to commit."; exit 0; fi
+echo "Staged:"; git diff --cached --name-status | sed 's/^/  /'
+left=$(git status --porcelain | grep -v '^[MADRC] ' || true)
+[ -z "$left" ] || { echo "Left unstaged (not in --files):"; echo "$left" | sed 's/^/  /'; }
+
+# 4. Provenance: record only what is known; never guess a session from file times.
+if [ -z "$session" ] && [ "$harness" = "claude-code" ]; then session="${CLAUDE_CODE_SESSION_ID:-}"; fi
+case "$harness" in
+  claude-code) latest_prompt=$(ls -t prompts/claude/*.jsonl 2>/dev/null | head -1 || true);;
+  codex) latest_prompt=$(ls -t prompts/codex/*.jsonl 2>/dev/null | head -1 || true);;
+esac
+
+trailers="Pass: $pass
+Model: $model
+Harness: $harness"
+[ -n "$todo" ] && trailers="$trailers
+Todo: $todo"
+[ -n "${latest_prompt:-}" ] && trailers="$trailers
+Prompt-Log: $latest_prompt"
+[ -n "$session" ] && trailers="$trailers
+Prompt-Session: $session"
+args=(-q -m "$msg")
+[ -n "$directive" ] && args+=(-m "Directive: $directive")
+[ -n "$body" ] && args+=(-m "$body")
+args+=(-m "$trailers")
+git commit "${args[@]}"
+echo "Committed $pass ($(git rev-parse --short HEAD))"

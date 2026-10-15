@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Agents run this before any pass. Refuses to start on a dirty tree so author
+# edits are never folded into an agent commit.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+reader=""
+case "${1:-}" in
+  --reader) reader=1 ;;
+  "") ;;
+  *) echo "usage: scripts/agent-preflight [--reader]" >&2; exit 2 ;;
+esac
+# Checking readiness must not mutate Git config or expose reader spoilers.
+if [ "$(git config core.hooksPath || true)" != ".githooks" ] || \
+   [ ! -x .githooks/commit-msg ] || [ ! -x .githooks/pre-commit ]; then
+  echo "STOP: repository hooks are not ready. Run scripts/setup.sh."
+  exit 1
+fi
+# prompts/ is appended by the prompt-log hook on every prompt; agent-commit carries it.
+# Harness skill links are setup artifacts, not author edits.
+dirty=$(git status --porcelain -- . ':(exclude)prompts/' ':(exclude).claude/skills' ':(exclude).agents/skills' ':(exclude).codex/skills')
+if [ -n "$dirty" ]; then
+  echo "STOP: working tree has uncommitted changes."
+  echo "Ask the author to run: scripts/author-commit \"message\""
+  [ -n "$reader" ] || echo "$dirty"
+  exit 1
+fi
+# Remember where this pass started so agent-commit can detect author commits made meanwhile.
+# Best effort: local state under .git/, not config; a read-only checkout just skips the check.
+git_dir=$(git rev-parse --git-dir)
+{ mkdir -p "$git_dir/workbench" && git rev-parse -q --verify HEAD > "$git_dir/workbench/preflight-head"; } 2>/dev/null || true
+if [ -n "$reader" ]; then
+  echo "Clean tree; reader mode (no directives, cycle notes, or commit subjects)."
+  exit 0
+fi
+last_pass=$(git log -1 --format='%(trailers:key=Pass,valueonly)' | tr -d '\n')
+echo "Clean tree. HEAD $(git rev-parse --short HEAD) is a '${last_pass:-unknown}' commit."
+last_author=$(git log -1 --grep='^Pass: author-edit' --format='%h %s' 2>/dev/null)
+echo "Last author edit: ${last_author:-none}"
+echo "Branch: $(git branch --show-current)"
+echo "--- open TODOs ---"
+python3 scripts/todo.py list
+open_fb=$(grep -c '| open |' feedback/INDEX.md 2>/dev/null || true)
+[ "${open_fb:-0}" -gt 0 ] && echo "--- $open_fb feedback item(s) awaiting the author's disposition in feedback/INDEX.md ---"
+python3 scripts/todo.py lint >/dev/null || echo "--- malformed TODO markers: run python3 scripts/todo.py lint ---"
+scripts/memory-status --brief || true
+scripts/workflow status
+exit 0

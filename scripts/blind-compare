@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""Blind comparison of alternative versions of a chapter (or scene file).
+
+Candidates are git revisions (usually alt/* branches), optionally REV:PATH when the
+file differs between them. Versions are shuffled into build/blind/<id>/A.md, B.md, ...
+with comments stripped; the key stays in build/blind/<id>/.key.json. A judge (the
+blind-judge skill, ideally a model that wrote none of the candidates) reads only the
+letter files. The author reveals the key afterwards.
+
+usage:
+    scripts/blind-compare prepare PATH REV1 REV2 [REV3 ...]    -> prints the comparison id
+    scripts/blind-compare reveal ID                           -> letter -> revision, pass, model
+"""
+import hashlib
+import json
+import os
+import random
+import re
+import secrets
+import subprocess
+import sys
+import tempfile
+import time
+
+ROOT = os.path.join("build", "blind")
+LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+def sha(text):
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def git(*args):
+    r = subprocess.run(["git", *args], capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(r.stderr.strip())
+    return r.stdout
+
+
+def clean(t):
+    t = re.sub(r"<!--.*?-->\n?", "", t, flags=re.S)
+    return re.sub(r"\n{3,}", "\n\n", t).strip() + "\n"
+
+
+def prepare(path, revs):
+    if len(revs) < 2:
+        sys.exit("need at least two revisions")
+    if len(revs) > len(LETTERS):
+        sys.exit(f"at most {len(LETTERS)} candidates")
+    # Validate and read every candidate before writing anything.
+    cands = []
+    for rev in revs:
+        r, _, p = rev.partition(":")
+        p = p or path
+        commit = git("rev-parse", "--verify", f"{r}^{{commit}}").strip()
+        source = git("show", f"{commit}:{p}")
+        text = clean(source)
+        cands.append({"rev": r, "path": p, "commit": commit,
+                      "source_sha256": sha(source), "judged_sha256": sha(text), "_text": text})
+    if len({c["judged_sha256"] for c in cands}) < len(cands):
+        sys.exit("two candidates are identical once comments are stripped; nothing to judge between them")
+    random.SystemRandom().shuffle(cands)
+    cid = time.strftime("%Y%m%d-%H%M%S") + "-" + secrets.token_hex(2)
+    os.makedirs(ROOT, exist_ok=True)
+    tmp = tempfile.mkdtemp(prefix=".tmp-", dir=ROOT)
+    for letter, c in zip(LETTERS, cands):
+        c["letter"] = letter
+        with open(os.path.join(tmp, f"{letter}.md"), "w", encoding="utf-8") as fh:
+            fh.write(c.pop("_text"))
+    with open(os.path.join(tmp, ".key.json"), "w", encoding="utf-8") as fh:
+        json.dump({"path": path, "candidates": cands}, fh, indent=2)
+    out = os.path.join(ROOT, cid)
+    os.rename(tmp, out)  # publish the bundle in one step
+    letters = ", ".join(f"{c['letter']}.md" for c in cands)
+    print(f"Comparison {cid}: {out}/ holds {letters}")
+    print(f'Ask a judge: "Blind-judge {cid}". Reveal afterwards with: scripts/blind-compare reveal {cid}')
+
+
+def reveal(cid):
+    with open(os.path.join(ROOT, cid, ".key.json"), encoding="utf-8") as fh:
+        key = json.load(fh)
+    print(f"{key['path']}")
+    for c in key["candidates"]:
+        info = git("log", "-1", "--format=%(trailers:key=Pass,valueonly,separator=)|"
+                   "%(trailers:key=Model,valueonly,separator=)|%s", c["commit"], "--", c["path"]).strip()
+        p, m, s = (info.split("|", 2) + ["", "", ""])[:3]
+        print(f"  {c['letter']}  {c['rev']} ({c['commit'][:9]})  pass={p or '?'}  model={m or '?'}  {s}")
+        print(f"     judged text sha256 {c.get('judged_sha256', '?')[:16]}")
+    print("Record the result in models.md with the commit ids. One judgement is one data point: for a\n"
+          "consequential choice, repeat with a fresh judge (the letters are reshuffled on each prepare),\n"
+          "and if you graft lines from a loser into the winner, judge the merged scene again.")
+
+
+def main(argv):
+    if len(argv) >= 4 and argv[0] == "prepare":
+        prepare(argv[1], argv[2:])
+    elif len(argv) == 2 and argv[0] == "reveal":
+        reveal(argv[1])
+    else:
+        print(__doc__)
+        return 2
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Warn (not block) when staged manuscript files are not one-sentence-per-line.
+files=$(git diff --cached --name-only --diff-filter=AM -- 'manuscript/*.md')
+[ -z "$files" ] && exit 0
+python3 scripts/semantic-lines.py --check $files >/dev/null 2>&1 || \
+  echo "note: some manuscript lines hold several sentences; run scripts/semantic-lines.py <file> to reflow."
+python3 scripts/chapter-names --check >/dev/null 2>&1 || \
+  echo "note: a chapter file name no longer matches its heading; run scripts/chapter-names to rename."
+exit 0

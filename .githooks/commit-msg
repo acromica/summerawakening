@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# Commit rules. Everything is checked against the STAGED commit, never the working copy.
+# 1) No Pass: trailer = author edit, except from an agent shell, where it is rejected
+#    (agent text labelled as the author's corrupts learn-from-edits).
+# 2) The Pass must be a known pass name.
+# 3) Only author edits may change <!-- LOCKED --> spans.
+# 4) File boundaries by pass: report passes write only feedback/ and prompts/; planning and
+#    memory passes may touch manuscript/ only to add or change comment markers.
+# 5) Any agent commit touching manuscript/ must leave TODO markers well formed.
+# 6) todo-implement: each Todo: id must exist at HEAD and be resolved (or await an AGENT-Q answer)
+#    in the staged text, and every manuscript change must lie inside those TODOs' scopes unless
+#    the commit body explains it under "Out-of-scope:".
+msgfile="$1"
+fail() { echo "commit-msg: $*"; exit 1; }
+
+if ! grep -q '^Pass:' "$msgfile"; then
+  if [ -z "${WORKBENCH_AUTHOR:-}" ] && { [ -n "${CLAUDECODE:-}" ] || [ -n "${CODEX_SANDBOX:-}" ] || [ -n "${CODEX_SANDBOX_NETWORK_DISABLED:-}" ]; }; then
+    echo "commit-msg: agents must commit with scripts/agent-commit (no Pass: trailer found)."
+    echo "            Author committing from inside an agent session? Use scripts/author-commit."
+    exit 1
+  fi
+  printf '\nPass: author-edit\n' >> "$msgfile"
+fi
+pass=$(grep -m1 '^Pass:' "$msgfile" | sed 's/^Pass:[[:space:]]*//; s/[[:space:]]*$//')
+[ "$pass" = "author-edit" ] && exit 0
+
+case "$pass" in
+  setup|tooling|bible|draft|revise|line-edit|critique|cold-read|reader-report|blind-judge|\
+  structural-revision|continuity|voice-check|slop-check|todo-ids|todo-plan|todo-implement|\
+  canon-update|learn-from-edits) ;;
+  *) fail "unknown Pass '$pass' (see Pass names in AGENTS.md)";;
+esac
+[ "$pass" = "setup" ] && exit 0
+
+python3 scripts/check-locked || fail "LOCKED spans may only be changed by the author. Revert those edits; propose changes in feedback/."
+
+staged=$(git diff --cached --name-only)
+ms_staged=$(printf '%s\n' "$staged" | grep '^manuscript/' || true)
+case "$pass" in
+  critique|cold-read|reader-report|blind-judge|continuity|voice-check|slop-check|learn-from-edits)
+    stray=$(printf '%s\n' "$staged" | grep -v -e '^feedback/' -e '^prompts/' -e '^$' || true)
+    [ -z "$stray" ] || fail "a '$pass' pass writes only to feedback/ (and prompts/); also staged: $(echo $stray)";;
+  todo-ids|todo-plan|structural-revision|canon-update|bible|tooling)
+    if [ -n "$ms_staged" ]; then
+      python3 scripts/todo.py check-markers-only --staged || fail "a '$pass' pass may not change manuscript prose."
+    fi;;
+esac
+
+if [ -n "$ms_staged" ]; then
+  python3 scripts/todo.py lint --staged || fail "fix the TODO markers above."
+fi
+
+if [ "$pass" = "todo-implement" ]; then
+  ids=$(grep '^Todo:' "$msgfile" | sed 's/^Todo:[[:space:]]*//' | tr '\n' ',')
+  [ -n "$ids" ] || fail "todo-implement commits need a Todo: trailer (use scripts/agent-commit --todo tN)."
+  python3 scripts/todo.py check-ids "$ids" || fail "resolve the TODO(s) above in the staged text, or leave an AGENT-Q beside them."
+  if ! python3 scripts/todo.py check-scope --staged --ids "$ids"; then
+    grep -q '^Out-of-scope:' "$msgfile" || fail "edits outside the named TODO scope. Revert them, or explain each (continuity fix, typo) under 'Out-of-scope:' in the commit body."
+    echo "commit-msg: out-of-scope edits accepted with the explanation in the commit body."
+  fi
+fi
+exit 0

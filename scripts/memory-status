@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Which derived story memory is out of date with the manuscript?
+
+Each plan/summaries/chNN.md records `Source revision: <commit>`, the revision of the chapter it
+was written from. A summary is stale when its chapter has changed since that revision. Canon
+entries citing a stale chapter (`(chNN)`) are listed as needing a check, not as wrong.
+
+usage:
+    scripts/memory-status            full report
+    scripts/memory-status --brief    one line, or nothing when memory is current (used by preflight)
+    scripts/memory-status --check    exit 1 if any summary is stale or lacks a source revision
+"""
+import glob
+import os
+import re
+import subprocess
+import sys
+
+
+def git_ok(*args):
+    return subprocess.run(["git", *args], capture_output=True).returncode == 0
+
+
+def chapters():
+    out = {}
+    for f in sorted(glob.glob("manuscript/ch*.md")):
+        m = re.match(r"ch(\d+)", os.path.basename(f))
+        if m:
+            out[f"ch{int(m.group(1)):02d}"] = f
+    return out
+
+
+def status():
+    rows = []
+    for ch, path in chapters().items():
+        summary = f"plan/summaries/{ch}.md"
+        if not os.path.exists(summary):
+            rows.append((ch, "missing", "no summary yet"))
+            continue
+        text = open(summary, encoding="utf-8").read()
+        m = re.search(r"^Source revision:\s*(\S*)", text, re.M)
+        rev = m.group(1) if m else ""
+        if not rev:
+            rows.append((ch, "unknown", "summary has no Source revision"))
+        elif not git_ok("rev-parse", "-q", "--verify", f"{rev}^{{commit}}"):
+            rows.append((ch, "unknown", f"Source revision {rev} not found"))
+        elif not git_ok("diff", "--quiet", rev, "HEAD", "--", f"manuscript/{ch}*.md"):
+            rows.append((ch, "stale", f"chapter changed since {rev[:9]}"))
+        else:
+            rows.append((ch, "current", rev[:9]))
+    return rows
+
+
+def canon_refs(chs):
+    try:
+        canon = open("bible/canon.md", encoding="utf-8").read().split("\n")
+    except OSError:
+        return 0
+    return sum(1 for l in canon if any(f"({c}" in l or f", {c}" in l for c in chs))
+
+
+def main(argv):
+    rows = status()
+    stale = [c for c, s, _ in rows if s == "stale"]
+    unknown = [c for c, s, _ in rows if s == "unknown"]
+    missing = [c for c, s, _ in rows if s == "missing"]
+    if "--brief" in argv:
+        parts = []
+        if stale:
+            parts.append(f"{len(stale)} stale ({', '.join(stale)}; {canon_refs(stale)} canon entries cite them)")
+        if unknown:
+            parts.append(f"{len(unknown)} without a source revision ({', '.join(unknown)})")
+        if missing:
+            parts.append(f"{len(missing)} chapter(s) without a summary")
+        if parts:
+            print("--- memory: " + "; ".join(parts) + " — scripts/memory-status ---")
+        return 0
+    if not rows:
+        print("No chapters yet.")
+    for ch, s, note in rows:
+        print(f"{ch}  {s:<8} {note}")
+    if stale:
+        print(f"\n{canon_refs(stale)} canon entries cite stale chapters; check them when refreshing.")
+    if "--check" in argv:
+        return 1 if stale or unknown else 0
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

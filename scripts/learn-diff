@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Show how the author changed agent-written sentences. Feeds the learn-from-edits skill.
+
+With one sentence per line, each prose line the author removed or rewrote in an author-edit
+commit is blamed back to the commit that last wrote it. Only lines an agent pass wrote are
+reported, with that pass and model. Blame credits the most recent line-level change, so treat
+attribution as approximate, and treat the before/after pairs as evidence for hypotheses the
+author confirms, not as rules.
+
+usage:
+    scripts/learn-diff                 the last 5 author-edit commits
+    scripts/learn-diff --last N        the last N author-edit commits
+    scripts/learn-diff --since REV     every author-edit commit after REV
+    scripts/learn-diff --stats         only the summary counts (not a model ranking)
+"""
+import re
+import subprocess
+import sys
+from collections import Counter, defaultdict
+
+AUTHOR = "author-edit"
+NOT_AGENT = {AUTHOR, "setup", ""}
+
+
+def git(*args, check=True):
+    r = subprocess.run(["git", *args], capture_output=True, text=True)
+    if check and r.returncode:
+        sys.exit(r.stderr.strip() or f"git {' '.join(args)} failed")
+    return r.stdout
+
+
+_meta = {}
+
+
+def meta(sha):
+    """(pass, model) for a commit, from its trailers."""
+    if sha not in _meta:
+        out = git("log", "-1", "--format=%(trailers:key=Pass,valueonly,separator=)%x00"
+                  "%(trailers:key=Model,valueonly,separator=)", sha)
+        p, _, m = out.strip("\n").partition("\x00")
+        _meta[sha] = (p.strip(), m.strip() or "?")
+    return _meta[sha]
+
+
+_blame = {}
+
+
+def blame(rev, path):
+    """1-based line number -> originating commit sha, for path at rev."""
+    key = (rev, path)
+    if key not in _blame:
+        out = git("blame", "--line-porcelain", rev, "--", path, check=False)
+        owners, line = {}, 0
+        for row in out.splitlines():
+            if re.match(r"^[0-9a-f]{40} ", row):
+                sha, _, final = row.split()[:3]
+                line = int(final)
+                owners[line] = sha
+        _blame[key] = owners
+    return _blame[key]
+
+
+def author_commits(argv):
+    rng = []
+    if "--since" in argv:
+        rng = [f"{argv[argv.index('--since') + 1]}..HEAD"]
+    n = int(argv[argv.index("--last") + 1]) if "--last" in argv else (None if rng else 5)
+    args = ["log", "--format=%H", f"--grep=^Pass: {AUTHOR}", *rng]
+    if n:
+        args.insert(1, f"-{n}")
+    shas = git(*args, "--", "manuscript").split()
+    return [s for s in reversed(shas) if git("rev-parse", "-q", "--verify", f"{s}^", check=False).strip()]
+
+
+def hunks(parent, commit):
+    """Yield (old_path, new_path, old_start, old_lines, new_lines) for manuscript changes."""
+    diff = git("diff", "-M", "-U0", "--no-color", parent, commit, "--", "manuscript")
+    old_path = new_path = None
+    cur = None
+    in_header = False
+    for row in diff.splitlines():
+        if row.startswith("diff --git "):
+            if cur:
+                yield cur
+            cur, in_header = None, True
+        elif in_header and row.startswith("--- "):
+            old_path = None if row == "--- /dev/null" else row[6:]
+        elif in_header and row.startswith("+++ "):
+            new_path = None if row == "+++ /dev/null" else row[6:]
+        elif row.startswith("@@"):
+            in_header = False
+            if cur:
+                yield cur
+            m = re.match(r"@@ -(\d+)(?:,(\d+))? \+(\d+)", row)
+            cur = (old_path, new_path, int(m.group(1)), [], [])
+        elif cur and row.startswith("-"):
+            cur[3].append(row[1:])
+        elif cur and row.startswith("+"):
+            cur[4].append(row[1:])
+    if cur:
+        yield cur
+
+
+def is_prose(line):
+    """Skip blank lines, headings, setext underlines, scene breaks, and comment-only lines."""
+    s = re.sub(r"<!--.*?-->", "", line).strip()
+    return bool(s) and not re.match(r"^(#|CHAPTER\b|[-=*\s]{3,}$)", s)
+
+
+def main(argv):
+    stats_only = "--stats" in argv
+    changed, reviewed = Counter(), Counter()
+    for c in author_commits(argv):
+        parent = f"{c}^"
+        printed_header = False
+        file_hunks = list(hunks(parent, c))
+        # the matched cohort: agent prose in the files this author edit touched
+        for path in {h[0] for h in file_hunks if h[0]}:
+            owners = blame(parent, path)
+            for n, line in enumerate(git("show", f"{parent}:{path}", check=False).split("\n"), 1):
+                if is_prose(line) and n in owners and meta(owners[n])[0] not in NOT_AGENT:
+                    reviewed[meta(owners[n])] += 1
+        for old_path, new_path, start, old, new in file_hunks:
+            if not old or not old_path:
+                continue  # pure insertion: the author's own new text
+            owners = blame(parent, old_path)
+            prose = [i for i in range(len(old)) if is_prose(old[i])]
+            origins = {owners.get(start + i) for i in prose} - {None}
+            agent = [o for o in origins if meta(o)[0] not in NOT_AGENT]
+            if not agent:
+                continue
+            for o in agent:
+                changed[meta(o)] += sum(1 for i in prose if owners.get(start + i) == o)
+            if stats_only:
+                continue
+            if not printed_header:
+                print(f"\n=== author edit {c[:7]}: {git('log', '-1', '--format=%s', c).strip()}")
+                printed_header = True
+            who = ", ".join(sorted({f"{meta(o)[0]}/{meta(o)[1]} {o[:7]}" for o in agent}))
+            print(f"\n{new_path or old_path}:{start}  (agent text from {who})")
+            for line in old:
+                print(f"  - {line}")
+            for line in new:
+                print(f"  + {line}")
+
+    print("\n=== summary: agent-written prose lines in the files each author edit touched")
+    print(f"{'pass/model':<40} {'in reviewed files':>18} {'changed by author':>18}")
+    for key in sorted(set(changed) | set(reviewed)):
+        print(f"{key[0] + '/' + key[1]:<40} {reviewed[key]:>18} {changed[key]:>18}")
+    if not changed and not reviewed:
+        print("No agent-written prose found in the author's edited files.")
+    else:
+        print("\nEvidence for style hypotheses, not a model ranking. 'In reviewed files' assumes the author read\n"
+              "the whole file; blame credits the last commit to touch a line (a punctuation fix moves it); and\n"
+              "passes differ in difficulty. Use blind comparison to compare models.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

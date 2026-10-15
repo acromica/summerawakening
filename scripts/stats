@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+"""Prose counts: per-chapter numbers, pattern rates, banned phrases, repeated phrases.
+
+Models are bad at seeing their own tics and at noticing repetition across chapters, so these
+cheap counts point a reader at places worth looking. They are heuristics, not verdicts:
+a flagged pattern may be deliberate, a short line may be a complete sentence, a repeated
+phrase may be a motif. Fewer hits is not itself a quality goal. The tokenizer and patterns
+assume English prose.
+
+usage:
+    scripts/stats [FILES...]            per-chapter table + tics + book-wide repeated phrases
+    scripts/stats --slop FILES...       banned-phrase and tic hits with file:line (for slop-detector)
+    scripts/stats --min N               minimum count for a repeated phrase (default 4)
+Defaults to every manuscript/*.md. Comments (TODOs, LOCKED markers) and headings are ignored.
+"""
+import glob
+import math
+import re
+import sys
+from collections import Counter
+
+TICS = {
+    "not-X-but-Y": r"\bnot\b[^.!?\n]{1,40}?,?\s+but\b|\bisn't\b[^.!?\n]{1,30}?[.;,—-]\s*it's\b",
+    "hedges": r"\b(?:somehow|almost|a kind of|a sort of|something like|as if)\b",
+    "filter verbs": r"\b(?:saw|felt|noticed|realized|realised|seemed|wondered|watched)\b",
+    "stock beats": r"\b(?:nodded|smiled softly|shrugged|let out a breath|exhaled|swallowed hard|a beat)\b",
+    "abstractions": r"\b(?:weight|silence|tension|something|everything|nothing)\b",
+    # Elmore Leonard's rules (reference/craft-lenses.md §7)
+    "said-adverb": r"\b(?:said|asked)\s+\w+ly\b",
+    "said-bookisms": r"\b(?:exclaimed|retorted|hissed|growled|snapped|admonished|quipped|interjected|opined|mused|chuckled|snarled|breathed|intoned)\b",
+    "suddenly": r"\bsuddenly\b|\ball hell broke loose\b",
+    "exclamations": r"!",
+    # Swain: reaction placed before its stimulus ("she flinched as the glass shattered")
+    "reaction-first": r"\b(?:flinched|jumped|gasped|startled|winced|recoiled|froze|spun)\s+as\s+(?:the|a|an|he|she|they|it|his|her)\b",
+}
+RATE_ONLY = {"filter verbs", "abstractions", "exclamations"}  # too common to list line by line
+STOP = set("""a an the and or but if of to in on at for with from by as is was were be been it its
+he she they i you we his her their my your our him them me us this that these those there here
+not no so then than too very just had has have do did does said says say""".split())
+
+
+def strip(text):
+    text = re.sub(r"<!--.*?-->", lambda m: "\n" * m.group(0).count("\n"), text, flags=re.S)
+    return "\n".join("" if re.match(r"^\s*(#|[-=]{3,}\s*$|CHAPTER\b|\*\s\*\s\*)", l) else l
+                     for l in text.split("\n"))
+
+
+def sentences(text):
+    """One sentence per line is the house rule, so a non-blank line is a sentence."""
+    return [(i + 1, l.strip()) for i, l in enumerate(text.split("\n")) if l.strip()]
+
+
+def words(s):
+    return re.findall(r"[A-Za-z’']+", s)
+
+
+def banned_list():
+    try:
+        style = open("bible/style.md", encoding="utf-8").read()
+    except OSError:
+        return []
+    m = re.search(r"^## Banned phrases\s*\n(.*?)(?=^## |\Z)", style, re.S | re.M)
+    if not m:
+        return []
+    body = re.sub(r"<!--.*?-->", "", m.group(1), flags=re.S)
+    return [b.strip().strip('"“”').lower() for b in re.findall(r"^\s*[-*]\s+(.+)$", body, re.M) if b.strip()]
+
+
+def exemplars():
+    """The author's exemplar passages from bible/style.md, reflowed to one sentence per line."""
+    try:
+        style = open("bible/style.md", encoding="utf-8").read()
+    except OSError:
+        return ""
+    m = re.search(r"^## Exemplar passages.*?\n(.*?)(?=^## |\Z)", style, re.S | re.M)
+    if not m:
+        return ""
+    body = re.sub(r"<!--.*?-->", "", m.group(1), flags=re.S)
+    # exemplars may be pasted as ordinary paragraphs: split sentences so rows are comparable
+    return re.sub(r'([.!?…]["”’)]?)[ \t]+(?=["“]?[A-Z])', r"\1\n", body)
+
+
+def row(name, raw):
+    stripped = strip(raw)
+    sents = sentences(stripped)
+    lens = [len(words(s)) for _, s in sents if words(s)]
+    if not lens:
+        return None
+    text = "\n".join(s for _, s in sents)
+    w = sum(lens)
+    mean = w / len(lens)
+    sd = math.sqrt(sum((x - mean) ** 2 for x in lens) / len(lens))
+    dialogue = sum(1 for _, s in sents if re.search(r'["“”]', s)) / len(sents)
+    paras = [p for p in re.split(r"\n\s*\n", stripped) if p.strip()]
+    frag_end = sum(1 for p in paras if len(words(p.strip().split("\n")[-1])) <= 4) / max(1, len(paras))
+    tic = {k: len(re.findall(v, text, re.I)) for k, v in TICS.items()}
+    return (name[:28], w, len(lens), mean, sd, dialogue, frag_end, *(1000 * tic[k] / w for k in TICS))
+
+
+def table(files):
+    rows, total_words = [], 0
+    base = row("(your exemplars)", exemplars())
+    if base:
+        rows.append(base)
+    for f in files:
+        r = row(f.split("/")[-1], open(f, encoding="utf-8").read())
+        if r:
+            total_words += r[1]
+            rows.append(r)
+    hdr = ["chapter", "words", "sents", "mean", "sd", "dlg%", "frag¶%"] + [k[:9] for k in TICS]
+    print(" ".join(f"{h:>9}" if i else f"{h:<28}" for i, h in enumerate(hdr)))
+    for r in rows:
+        print(f"{r[0]:<28} {r[1]:>9} {r[2]:>9} {r[3]:>9.1f} {r[4]:>9.1f} {100*r[5]:>8.0f}% {100*r[6]:>8.0f}% "
+              + " ".join(f"{x:>9.1f}" for x in r[7:]))
+    print(f"\nTotal words: {total_words}. Pattern columns are regex hits per 1,000 words (heuristics). "
+          "sd = spread of words per line; dlg% = lines containing a quotation mark; "
+          "frag¶% = paragraphs whose last line has 4 words or fewer. Compare against your own exemplar "
+          "passages, not a universal target.")
+    return total_words
+
+
+def repeated(files, minimum):
+    grams = Counter()
+    for f in files:
+        toks = [w.lower() for _, s in sentences(strip(open(f, encoding="utf-8").read())) for w in words(s) + ["|"]]
+        for n in (3, 4, 5):
+            for i in range(len(toks) - n + 1):
+                g = toks[i:i + n]
+                if "|" in g or all(t in STOP for t in g):
+                    continue
+                grams[" ".join(g)] += 1
+    # keep the longest phrase when a shorter one is only its echo
+    top = [(g, c) for g, c in grams.most_common() if c >= minimum]
+    shown = []
+    for g, c in top:
+        if any(g in s and c <= sc for s, sc in shown):
+            continue
+        shown.append((g, c))
+    print(f"\nRepeated phrases (≥{minimum}×, book-wide):")
+    for g, c in shown[:40]:
+        print(f"  {c:>3}× {g}")
+    if not shown:
+        print("  none")
+
+
+def slop(files):
+    banned = banned_list()
+    hits = 0
+    for f in files:
+        for n, s in sentences(strip(open(f, encoding="utf-8").read())):
+            low = s.lower()
+            for b in banned:
+                if b in low:
+                    print(f"{f}:{n}  BANNED \"{b}\"  {s}")
+                    hits += 1
+            for k, v in TICS.items():
+                if k in RATE_ONLY:
+                    continue  # see the table rates
+                for m in re.finditer(v, s, re.I):
+                    print(f"{f}:{n}  {k}: \"{m.group(0)}\"  {s}")
+                    hits += 1
+    if not banned:
+        print("note: no '## Banned phrases' list found in bible/style.md")
+    print(f"{hits} hit(s).")
+
+
+def main(argv):
+    minimum = 4
+    if "--min" in argv:
+        i = argv.index("--min")
+        minimum = int(argv[i + 1])
+        del argv[i:i + 2]
+    do_slop = "--slop" in argv
+    files = [a for a in argv if not a.startswith("--")] or sorted(glob.glob("manuscript/*.md"))
+    files = [f for f in files if f.endswith(".md")]
+    if not files:
+        print("No manuscript files.")
+        return 0
+    if do_slop:
+        slop(files)
+        return 0
+    table(files)
+    repeated(files, minimum)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

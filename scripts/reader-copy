@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""Create a fresh comment-free reader bundle without exposing raw manuscript text.
+Usage: scripts/reader-copy manuscript/ch01-*.md [more chapters...]
+Blank lines preserve source line numbers. Read files in the order in manifest.json.
+"""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import re
+import subprocess
+import tempfile
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def clean(text):
+    # Fail closed on malformed comments rather than leaking an unfinished directive.
+    out, position = [], 0
+    while True:
+        start = text.find('<!--', position)
+        if start < 0:
+            out.append(text[position:])
+            break
+        out.append(text[position:start])
+        end = text.find('-->', start + 4)
+        if end < 0 or '<!--' in text[start + 4:end]:
+            raise ValueError('Unclosed or nested HTML comment')
+        end += 3
+        out.append('\n' * text[start:end].count('\n'))
+        position = end
+    return ''.join(out)
+
+
+def prepare(root, paths):
+    chapters, seen = [], set()
+    for path in paths:
+        path = path.resolve()
+        if path.parent != (root / 'manuscript').resolve():
+            raise ValueError('Inputs must be chapter files directly in manuscript/')
+        match = re.fullmatch(r'ch(\d+)(?:-[^/]+)?\.md', path.name)
+        if not match:
+            raise ValueError(f'Not a chapter filename: {path.name}')
+        number = int(match.group(1))
+        if number in seen:
+            raise ValueError(f'Duplicate chapter number: {number}')
+        seen.add(number)
+        raw = path.read_text(encoding='utf-8')
+        sanitized = clean(raw)
+        chapters.append((number, path.name, raw, sanitized))
+    chapters.sort()
+    revision = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root, check=True,
+                              capture_output=True, text=True).stdout.strip()
+    dirty = subprocess.run(['git', 'status', '--porcelain', '--', 'manuscript'], cwd=root,
+                           check=True, capture_output=True, text=True).stdout
+    # Validate every input before creating output; hashes identify the actual files read.
+    build = root / 'build'
+    build.mkdir(exist_ok=True)
+    output = Path(tempfile.mkdtemp(prefix='reader-', dir=build))
+    manifest = {'revision': revision, 'manuscript_dirty': bool(dirty), 'files': []}
+    for _, name, raw, sanitized in chapters:
+        (output / name).write_text(sanitized, encoding='utf-8')
+        digest = lambda text: hashlib.sha256(text.encode('utf-8')).hexdigest()
+        manifest['files'].append({'file': name, 'source_sha256': digest(raw),
+                                  'reader_sha256': digest(sanitized)})
+    (output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    return output
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('files', nargs='+', type=Path)
+    args = parser.parse_args()
+    try:
+        output = prepare(ROOT, args.files)
+    except (OSError, ValueError, subprocess.CalledProcessError) as exc:
+        parser.exit(1, f'Reader copy failed: {exc}\n')
+    print(output)
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

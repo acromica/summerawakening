@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+"""Read-only writing-cycle status/check. Completeness is not literary verification."""
+import argparse
+from pathlib import Path
+import re
+
+ROOT = Path(__file__).resolve().parent.parent
+FIELDS = ('Mode', 'Scope', 'Baseline', 'Objective', 'Preserve', 'Author reaction',
+          'Evaluation', 'Effort limit', 'Stop when', 'Next action')
+STATES = {'idle', 'active', 'awaiting-author', 'verified', 'deferred'}
+
+
+def inspect(text):
+    text = re.sub(r'<!--.*?-->', '', text, flags=re.S)
+    fields, errors = {}, []
+    for line in text.splitlines():
+        match = re.match(r'^([A-Za-z][A-Za-z ]*):\s*(.*)$', line)
+        if match:
+            key, value = match.groups()
+            if key in fields:
+                errors.append(f'Duplicate field: {key}')
+            fields[key] = value.strip()
+    state = fields.get('Status', '')
+    if state not in STATES:
+        errors.append('Status must be idle, active, awaiting-author, verified, or deferred')
+    if state != 'idle':
+        required = FIELDS + (('Evidence', 'Continuity and memory') if state == 'verified' else ())
+        errors.extend(f'Missing: {key}' for key in required if not fields.get(key))
+        if fields.get('Mode') not in {'exploration', 'revision'}:
+            errors.append('Mode must be exploration or revision')
+        if state == 'verified':
+            for key in ('Evidence', 'Continuity and memory'):
+                if fields.get(key, '').lower() in {'pending', 'todo', 'tbd'}:
+                    errors.append(f'{key} is still pending')
+    return fields, errors
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('command', choices=['status', 'check'], nargs='?', default='status')
+    args = parser.parse_args()
+    path = ROOT / 'plan/cycle.md'
+    try:
+        fields, errors = inspect(path.read_text(encoding='utf-8'))
+    except OSError as exc:
+        parser.exit(1, f'Cannot read cycle: {exc}\n')
+    print(f"Cycle: {fields.get('Status') or 'unspecified'}")
+    if fields.get('Status') == 'idle':
+        print('No active cycle. Small explicit TODOs can proceed without a cycle note.')
+    elif args.command == 'status':
+        for key in ('Mode', 'Scope', 'Objective', 'Evaluation', 'Stop when', 'Next action'):
+            print(f"{key}: {fields.get(key) or '(not recorded)'}")
+    for error in errors:
+        print(error)
+    if args.command == 'check' and not errors:
+        print('Record complete for its status; reader effect requires human/reader judgment.')
+    return int(bool(errors)) if args.command == 'check' else 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Timeline of passes: hash, date, pass, model, summary.
+git log --date=short --format='%h %ad %<(16,trunc)%(trailers:key=Pass,valueonly,separator=) %<(18,trunc)%(trailers:key=Model,valueonly,separator=) %s' "$@"

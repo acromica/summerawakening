@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Commit the author's edits and TODO markers. Run this BEFORE asking an agent to work.
+# usage: scripts/author-commit "what I changed"
+set -euo pipefail
+msg="${1:-Author edits}"
+git add -A
+if git diff --cached --quiet; then echo "Nothing to commit."; exit 0; fi
+n=$(python3 scripts/todo.py list | grep -vc '^No open' || true)
+git commit -q -m "$msg" -m "Open-TODOs: $n" -m "Pass: author-edit"
+echo "Committed author edits ($(git rev-parse --short HEAD)). Open TODO lines: $n"
+python3 scripts/todo.py list

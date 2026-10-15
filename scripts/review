@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Show what agents changed since the author's last edit commit (word-level).
+# usage: scripts/review [path]
+set -euo pipefail
+base=$(git log -1 --grep='^Pass: author-edit' --format=%H)
+[ -n "$base" ] || { echo "No author-edit commit yet."; exit 1; }
+echo "Agent changes since author commit $(git rev-parse --short "$base"):"
+git log --format='  %h %(trailers:key=Pass,valueonly,separator=) | %s' "$base"..HEAD
+git diff --word-diff=color "$base" HEAD -- "${1:-manuscript}"

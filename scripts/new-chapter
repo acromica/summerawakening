@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# usage: scripts/new-chapter 07 "Title"   -> manuscript/ch07-title.md
+set -euo pipefail
+cd "$(dirname "$0")/.."
+mkdir -p manuscript
+[ $# -ge 1 ] || { echo 'usage: scripts/new-chapter NN "Title"'; exit 2; }
+n="$1"; title="${2:-Untitled}"
+slug=$(python3 "$(dirname "$0")/chapter-names" --slug "$title")
+f="manuscript/ch$n-$slug.md"
+for existing in manuscript/ch"$n".md manuscript/ch"$n"-*.md; do
+  [ -e "$existing" ] && { echo "chapter $n already exists: $existing"; exit 1; }
+done
+heading="CHAPTER $((10#$n)) — $title"
+underline=$(printf '%*s' "${#heading}" '' | tr ' ' '-')
+printf '%s\n%s\n\n<!-- TODO [insert]: Draft this chapter from plan/outline.md, chapter %s. -->\n' "$heading" "$underline" "$n" > "$f"
+echo "Created $f"
