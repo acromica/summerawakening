@@ -46,9 +46,10 @@ I push harder and the dent gets deeper and the whole side of my face starts to r
 
 Then there's a small pop that I feel in my teeth, and the post is through, and the back of it is sticking out behind my ear like it was always there.
 
-"Yass!" Danny slaps the tile.
+Danny slaps the tile.
 
-"Good job!
+"Yass!
+Good job!
 You are the man."
 
 I let go.
