@@ -1,10 +1,9 @@
 CHAPTER 1 — The Left Ear
 ------------------------
 
-"Come on, do it, you pussy!
-You can do it."
+"Come on, do it, you pussy!"
 
-Danny is sitting on the edge of the tub with his sneakers in it, like he's waiting for a bus.
+My friend Danny is sitting on the edge of the tub with his sneakers in it, like he's waiting for a bus.
 
 I'm at the sink.
 
@@ -12,39 +11,35 @@ The mirror has a crack across the bottom corner that my mom says she'll get fixe
 
 The earring is in my right hand.
 
-The card it came on said diamond.
+It's a cheap fake diamond that still sparkles nicely.
 
-The price said otherwise.
+Walmart special.
 
 Danny filed the post down to a point with a nail file he stole from his sister, and now it's sharp enough to draw a dot of blood on my thumb when I test it.
 
-I've been holding an ice cube on my left earlobe for five minutes.
+II was going to get an ice cube earlier, when Danny also called me a pussy then for even mentioning it.
 
-The ice is gone and my fingers are wet and the lobe is a hot pink thing that doesn't belong to me anymore.
+No ice, my fingers are trembling and the lobe is hot red from being squeezed for so long.
 
 "You're stalling," Danny says.
 
 "I'm lining it up."
 
-"You've been lining it up since the Simpsons."
+"You've been lining it up since the Simpsons. You can do it"
 
-I pinch the lobe flat.
+I pinch the lobe flat again, my index finger and thumb side by side to avoid the sharpened post when it comes through.
 
 I set the point against it.
 
 My heart is going hard, and so is the rest of me, which makes no sense at all.
 
-Nothing about this should do that.
-
 I lean my hips into the sink so Danny can't see and tell myself it's adrenaline.
 
 The point dents the skin.
 
-It doesn't go in.
-
 I push harder and the dent gets deeper and the whole side of my face starts to ring.
 
-Then there's a small pop that I feel in my teeth, and the post is through, and the back of it is sticking out behind my ear like it was always there.
+I push the fake diamond earring hard and there's a small pop that I feel in my teeth, and the post is through, and the back of it is sticking out behind my ear like it was always there.
 
 Danny slaps the tile.
 
@@ -54,7 +49,7 @@ You are the man."
 
 I let go.
 
-There's a bead of blood under the stone.
+There's blood blood on my earlobe and on my fingers.
 
 I wipe it with toilet paper and look.
 
@@ -64,13 +59,22 @@ It looks like something a girl wears to prom.
 
 I smile at the mirror anyway, because Danny is watching, and because the guy in the mirror did a thing he was scared to do.
 
-"How long till I can switch it?" I ask.
+I pick up the earring back off the piece of alcohol soaked toilet paper and gently push it over the end post.
 
-"Six weeks."
+"Now cut the sharp end off" Danny says as he hands me the wire cutter pliers.
 
-"The guy at the mall said eight."
+I take the pliers-like cutters and gently hold then to the earring back and open them gently to straddle the post portion sticking out. I lean my head sideways over the sink and cup my hand to try t catch the sharp end of the post as I pause, then pull the cutters shut. 
+They make a click as the sharp end of the post breaks off.
 
-"The guy at the mall wants to sell you cleaning solution."
+I look at my hand and see the dark sharp and shiny sliver of metal and shake it off my hand into the trash.
+
+"How long till I can switch - put in the skull earring" I ask.
+
+"Just a few days man. Any earlier and it will feel like repiercing your ear."
+
+"The guy at the mall said six weeks."
+
+"The guy at the mall is a loser and wants to sell you cleaning solution. And you're welcome fucker, I just saved you $30 for the piercing and who knows how much the cleaning saline was going to cost you."
 
 Next to the faucet, in its little plastic bag, the skull and crossbones is waiting, silver, with red glass in the eye sockets.
 
@@ -80,9 +84,9 @@ I turn my head left and right.
 
 Under the light my hair falls over the ear and the stone winks through it.
 
-Six weeks, I think.
+A week, I think.
 
-Maybe five.
+Maybe two.
 
 * * *
 
@@ -133,10 +137,9 @@ There's nothing to say to that.
 
 She picks the coffee back up and the electric company comes with it for a second, stuck to the bottom of the mug, and then peels off and falls.
 
-"Judy at work says old lady Ravensworth hires students every summer," she says.
+"Judy at work says old lady Ravensworth hires students every summer."
 "Up at the big house on Crest Road.
-She pays well, apparently.
-Very well."
+She pays well, apparently."
 
 "Old lady Ravensworth?"
 
@@ -156,15 +159,13 @@ I don't have to.
 
 * * *
 
-It's senior awards day, which means half the girls in my homeroom are dressed for church.
+It's senior awards day, which means half the girls in my homeroom look like they are dressed for church.
 
 Amber Lowell is one of them.
 
 She's two seats up and one row over, in a navy skirt, with her legs crossed at the ankle under the desk.
 
-She's wearing pantyhose.
-
-They're the shiny kind.
+She's wearing pantyhose, the shiny kind.
 
 When she moves her foot the light from the window runs down her shin like water down a glass, and stops at the strap of her shoe, and runs back up when she moves it again.
 
@@ -176,9 +177,9 @@ I don't know what they announced.
 
 She's turned around in her seat.
 
-She's looking right at me.
+She's looking right at me, I feel my face go hot.
 
-I look at the window, which is a mistake, because the window is the direction her legs are in.
+I look at the window, which is a mistake.
 
 "What are you up to this summer?" she says.
 
@@ -186,30 +187,25 @@ Her voice is friendly.
 
 That's worse.
 
-"Not much," I say.
-"Nothing really planned."
+"Ah, not much," I say.
+After a pause I quickly remembered, "I'm going to be practicing guitar." 
+I don't actually own a guitar, but danny has been letting me use his.
 
-"Same as always, huh?"
-
-"Pretty much."
+"Hm, cool."
+Was she being serious?
 
 She tucks her hair behind her ear.
 
-She has two small pearls in her ears, one in each, the way you're supposed to.
+She has two small pearls in her ears, one in each, the way you're supposed to, they are beautiful on her.
 
 "I'm working up at the Ravensworth house," she says.
 "In the house.
 My mom says now that I'm eighteen I can pay my own car insurance, so."
 She shrugs.
 "They need groundskeepers.
-You should apply.
-It's actually decent money."
+You should apply."
 
-"The Ravensworth house," I say.
-
-"On Crest Road.
-The big one."
-
+"The Ravensworth house," I say nodding.
 "Yeah.
 My mom said something about that."
 
@@ -250,11 +246,10 @@ You're going to a job."
 
 She leaves the bottle by the soap.
 
-It's tall and pearly and it smells like white flowers, the kind you'd smell on a woman in an elevator and remember for the rest of the day.
+I turn the shower on, wait for it to heat up and step in.
+I decide to give mom's tall and pearly shampoo bottle and conditioner a try. After squirting some out I reconsider as the strong smell of white flowers hits me, the kind you'd smell on a woman in an elevator and remember for the rest of the day.
 
-I use it the way the back of the bottle tells me to.
-
-I leave it in for two minutes.
+Following the directions, I leave the conditioner in for two minutes.
 
 I rinse it out with cool water, because the bottle says that too.
 
@@ -276,9 +271,7 @@ She hands me one of her hair ties, black, with a little gold bead where the ends
 
 I pull my hair back and loop it twice, and in the mirror there's a guy with a clean face and a smooth dark-blonde tail of hair down the back of his neck and a diamond in his left ear.
 
-He looks like someone your mom would like.
-
-"Take that thing out," she says, pointing.
+"You should take that thing out," she says, pointing to the earring.
 
 "It'll close up."
 
@@ -286,7 +279,7 @@ She looks at it for a long time.
 
 "Fine," she says.
 "Fine.
-Just let her see your hair first."
+Just be respectful to everyone."
 
 * * *
 
@@ -458,8 +451,8 @@ Mr. Tobin will give you gloves and boots."
 
 My hand goes up to it before I can stop it.
 
-"One ear pierced is a hoodlum, Mr. Kelly.
-I don't have hoodlums in my garden.
+"One ear pierced is a gang member, Mr. Kelly.
+I don't have gang members in my garden.
 My guests walk in that garden.
 Some of them are senators."
 She lets that sit.
@@ -551,7 +544,6 @@ I get in fast and pull my knees up.
 
 * * *
 
-<!-- AGENT-Q t5: revision-plan says "black pants (not jeans the letts)". I couldn't read "the letts" and wrote it as Ms. Ravensworth's "Not jeans. Not black jeans. Trousers." in scene 5. What did you mean? -->
 Two white shirts and two pairs of black trousers came to seventy-two dollars, plus tax.
 
 My mom counted it out of her wallet at the kitchen table, in twenties and then fives and then ones, and she pressed her lips together on every bill.
@@ -559,10 +551,6 @@ My mom counted it out of her wallet at the kitchen table, in twenties and then f
 "I'll pay you back," I said.
 
 "I know you will, honey."
-
-She said it like she'd already decided not to count on it.
-
-So I'm counting on it for her.
 
 It's six-forty on Monday morning and Crest Road is uphill the whole way.
 
@@ -582,16 +570,11 @@ My mom stopped in front of it in April and said "Oh," and then said "Don't be si
 
 I don't stop.
 
-But I look.
+But I look at my reflection.
 
-<!-- AGENT-Q t4: The plan leaves the earring choice open. I kept the single diamond in, hidden under his hair, and had Ms. Ravensworth notice without comment. Do you want him to have chosen (removed it, or pierced the right ear) before day one? -->
-The diamond is still in my left ear.
+My hair is in the low ponytail again, now two diamonds are glistening back at me.
 
-My hair's down this morning, over it.
-
-I tell myself I haven't decided.
-
-I tell myself there's no rule that says I have to decide today.
+I continue on until I get to Ms. Ravenworth's.
 
 The gate is open again.
 
