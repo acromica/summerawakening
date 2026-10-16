@@ -289,17 +289,17 @@ Just be respectful to everyone."
 
 * * *
 
-The Ravensworth house is at the top of Crest Road, behind a stone wall and a gate that's already open.
+I ride my bike.
 
-The drive curves up through trees so you don't see the house until you're nearly at it, and then it's all at once, white, with more windows than I can count from the car.
+Crest Road is uphill the whole last mile, and I stand on the pedals for most of it, with my ponytail swinging between my shoulder blades and my good shirt starting to stick.
+
+The Ravensworth house is at the top, behind a stone wall and a gate that's already open.
+
+The drive curves up through trees so you don't see the house until you're nearly at it, and then it's all at once, white, with more windows than I can count.
 
 There are roses along the front in beds so neat they look combed.
 
-My mom parks off to the side, by a hedge, like the car is something to be hidden.
-
-"I'll wait here," she says.
-"Smile.
-Say ma'am."
+I walk the bike the last stretch so I won't show up panting, and lean it against the bottom of the front steps, and wipe my hands on my pants.
 
 A woman opens the door before I can knock.
 
@@ -311,8 +311,21 @@ She doesn't need any, which I notice and then try not to notice.
 
 "You must be Chris," she says, and smiles like she's glad it's me and not somebody else.
 "I'm Rosalina.
-I run the house staff.
-Come in, come in.
+I run the house staff."
+She looks past me at the bike.
+"Oh, honey, not there.
+She'll have a fit.
+Take it down the side, past the roses, to the garden house.
+The little green building.
+Leave it there and come back up."
+
+I take it down the side.
+
+The garden house is green with white trim, and I lean the bike against the wall under a window full of clay pots.
+
+When I come back up she's still holding the door.
+
+"Come in, come in.
 Mind the step."
 
 I mind the step.
@@ -364,6 +377,8 @@ Bugs?"
 "You will," she says, and laughs, and it's a nice laugh, low, like she's letting me in on it.
 
 She writes something down.
+
+Her nails are short and painted a pale pearl color, the only thing about her that's dressed up.
 
 Her foot bounces a little while she writes, and the light from the window slides along her shin and back, and I make myself look at the lemons.
 
@@ -578,7 +593,7 @@ If she doesn't like you, she says we'll call."
 
 The door shuts.
 
-I go down the steps, and halfway down the drive I look back.
+I go down the steps and around the side, past the roses, toward the garden house.
 
 Around the side of the house, by a door with a screen in it, there's a girl shaking out a tablecloth.
 
@@ -612,7 +627,7 @@ The little pop.
 
 The second sting answering the first.
 
-I'm three steps from my mom's car and I'm hard as a rake handle, and I'm wearing my good pants, which are tight, and my shirt, which is short.
+I'm three steps from my bike and I'm hard as a rake handle, and I'm wearing my good pants, which are tight, and my shirt, which is short.
 
 I slow down.
 
@@ -620,13 +635,167 @@ I pull my shirttail out of my waistband and let it hang.
 
 I walk the last three steps like a man walking on ice.
 
-"Well?" my mom says through the open window.
+Getting on the bike is worse.
 
-"I got it."
+I ride down Crest Road standing on the pedals the whole way, and it isn't until the bottom of the hill that I can sit.
 
-She puts both hands over her mouth.
+Main Street is flat, and I coast most of it.
 
-I get in fast and pull my knees up.
+The jewelry store with the green awning is open, and I stop in front of it without really meaning to, one foot on the curb.
+
+The bracelet is still in the window on its little velvet hand, gold, with a row of small blue stones.
+
+My mom stopped in front of it in April and said "Oh," and then said "Don't be silly" to herself, and walked on.
+
+The price tag is tucked under the velvet wrist, and if I lean over the handlebars I can read it.
+
+Two hundred and ten dollars.
+
+Eight dollars an hour, nine hours a day, six days.
+
+The bracelet is less than one week.
+
+I decide right there with my foot on the curb.
+
+My first paycheck buys the bracelet.
+
+I don't know how I'll give it to her.
+
+I'll figure that out later.
+
+Behind the bracelet, in the glass, there's me.
+
+My face is red from the hill, my hair is in the low ponytail, and the diamond is glistening back at me from my left ear.
+
+I turn my head a little, the way I did in the bathroom with Danny.
+
+It still looks like something a girl wears to prom.
+
+I still like it.
+
+If I take it out, it closes up, and in a month there'll be nothing there but a little dent in the skin, like it never happened.
+
+I don't want it to close up.
+
+The guy at the mall wants thirty dollars.
+
+Thirty dollars is thirty dollars of bracelet.
+
+I push off from the curb and ride home.
+
+* * *
+
+My mom's at work until six, and the house is so quiet I can hear the refrigerator.
+
+The other diamond is still on its card in my desk drawer, where it's been since Danny and I bought the pair.
+
+Danny took his sister's nail file home with him.
+
+So I go into my mom's room.
+
+Her stuff is in a basket on the dresser: lipsticks, cotton balls, a hairbrush with her hair still in it, and a row of little bottles of nail polish.
+
+I pick one up.
+
+It's a magenta so bright it looks wet even with the cap on.
+
+The next one is red, and the next one is red, and the next, five reds in a row, each a little different, a fire-engine red and a cherry red and one so dark it looks like wine.
+
+At the end of the row there's one that isn't red at all.
+
+It's pale, almost white, with a shine in it like the inside of a shell.
+
+It's the color of Rosalina's nails.
+
+I hold it up to the window and turn it, and the shine moves around inside the glass, and I think about her hand on the clipboard and the pen tipping at my hair.
+
+I put it back exactly where it was.
+
+The nail file is in the top drawer, under a card of bobby pins.
+
+It's pink, and gritty on both sides.
+
+I sit on the edge of my bed and take the back off the second earring and file the post.
+
+It takes longer than I thought.
+
+The metal makes a fine gray dust on my jeans, and every so often I test the point on my thumb, until it draws a dot of blood the way the first one did.
+
+In the bathroom I get the rubbing alcohol out from under the sink.
+
+I pour some over the earring in the cap.
+
+I soak a cotton ball and wipe my right earlobe front and back until it's cold and smells like a doctor's office.
+
+This time I've thought ahead.
+
+I tear a square off the back of a cereal box and hold it flat behind the lobe, so the post has something to go into besides my fingers.
+
+There's nobody in the bathroom but me.
+
+Nobody to call me a pussy.
+
+Nobody to stall for.
+
+I set the point against the front of the lobe.
+
+I'm hard already, harder than last time, and there's nobody here to hide it from, so I don't.
+
+I push.
+
+The skin dents, and stings, and holds.
+
+I push harder and my eyes water and the whole right side of my head rings, and then there's the pop, the same pop, in my teeth, and the post goes through into the cardboard with a little crunch.
+
+I pull the cardboard away.
+
+I put the back on.
+
+The sharp end sticks out behind my ear.
+
+I'll get Danny to bring the cutters.
+
+Then I look up.
+
+There are two of them now.
+
+I turn my head left and look at the right one, and turn my head right and look at the left one, and then I look straight on, and they're both there at once, one on each side of my face, small and very bright, the way you're supposed to.
+
+They match.
+
+My ponytail is coming loose from the ride, and a piece of hair falls along my cheek, and I leave it.
+
+I'm pushing so hard against the front of my pants that it hurts.
+
+I unzip them.
+
+I take three sheets of Kleenex from the box on the back of the toilet.
+
+I hold myself and start to stroke, slow, with my free hand on the edge of the sink, looking at the diamonds.
+
+Left.
+
+Right.
+
+Then I close my eyes.
+
+Rosalina's nails, pale and shining, tapping on the clipboard.
+
+Her pen tipping at my hair.
+
+The whisper the nylon made when she crossed her legs.
+
+The back of her knee, where it was thinnest, going out the door.
+
+I come so fast it surprises me, all at once, into the tissues, and I have to grab the sink to stay up.
+
+I stand there breathing.
+
+I've never been that fast.
+
+Not even close.
+
+When I open my eyes the two diamonds are still there in the mirror, looking back at me, like they know something I don't.
 
 * * *
 
@@ -638,74 +807,49 @@ My mom counted it out of her wallet at the kitchen table, in twenties and then f
 
 "I know you will, honey."
 
-It's six-forty on Monday morning and Crest Road is uphill the whole way.
+I didn't tell her about the bracelet.
 
-The air is still cool.
+It's six-thirty on Monday morning.
 
-My new trousers have a crease down the front so sharp it looks drawn on, and they swish when I walk.
+I put on the white shirt and button it all the way up except the top one, and put on the black trousers, which have a crease down the front so sharp it looks drawn on.
 
-By my math the first week pays my mom back and the second week is mine.
+I tuck the shirt in.
 
-On the way up I pass the jewelry store on Main, the one with the green awning.
+I brush my hair and tie it back low, with my mom's hair tie, which I haven't given back.
 
-It's closed, but the lights are on in the window.
+When I come into the kitchen my mom is standing at the counter with her coffee, and she looks at me, and then at my left ear, and then at my right ear.
 
-There's a gold bracelet in there on a little velvet hand, with a row of small blue stones.
+She puts the coffee down.
 
-My mom stopped in front of it in April and said "Oh," and then said "Don't be silly" to herself, and walked on.
+"Two?"
 
-I don't stop.
+"She said one ear is a gang member."
 
-But I look at my reflection.
+"And two is what?"
 
-My hair is in the low ponytail again, now two diamonds are glistening back at me.
+"A fashion."
 
-I continue on until I get to Ms. Ravenworth's.
+My mom looks at me for a long time.
 
-The gate is open again.
+Then she reaches out and straightens my collar, though it's already straight.
 
-At the top of the drive the house is pink in the early sun, and the sprinklers are going on the big lawn, and the roses are sitting in their combed beds waiting for somebody to do something to them.
+"Well," she says.
+"At least they match."
 
-An old man in a green cap is standing by a wheelbarrow with two shovels in it.
+Crest Road is uphill the whole way.
 
-That must be Mr. Tobin.
+The air is still cool, and my new trousers swish against the bike frame every time I push down on the pedal.
 
-He doesn't wave.
+The gate is open.
 
-Around the side, through the screen door, I can see a corner of the kitchen, big and white and full of shade, with a ceiling fan turning.
+At the top of the drive the house is pink in the early sun, and the sprinklers are going on the big lawn.
 
-There's a long counter with a heap of green things on it, and a woman's arm, Rosalina's maybe, moving a knife up and down in a slow even rhythm.
+I walk the bike down the side, past the roses, to the green garden house, and lean it against the wall in the same spot as before, under the window full of clay pots.
 
-It looks cool in there, and very far away.
+I straighten up and tuck my shirt in again and look around for Mr. Tobin, or for Rosalina, or for anybody who looks like they're going to tell me what to do.
 
-"Mr. Kelly."
+"Nice earrings, Chris!"
 
-Ms. Ravensworth is standing at the top of the terrace steps in a pale blue dress, already made up, already in pearls, at a quarter to seven in the morning.
+I turn around.
 
-"You're early."
-
-"Yes, ma'am."
-
-"Don't let it go to your head."
-
-Her eyes go to my left ear, then my right, and she gives one small nod.
-
-"Mr. Tobin will work you very hard," she says.
-"Most boys find the garden harder than they expect."
-
-"I'll be okay."
-
-"Perhaps.
-If you are not, you will come and tell me.
-You won't go and tell your friends, or your mother.
-You'll come and tell me, and we will find out together what else you might be good for."
-
-She turns and goes inside.
-
-Mr. Tobin picks up a shovel and holds it out to me, handle first.
-
-Before I take it I look at my hands.
-
-My nails are short and pink and there's nothing under them at all.
-
-I take the shovel.
+It's Amber, in her black dress and white apron, standing at the screen door with a dish towel over her shoulder, and she's smiling at my ears.
