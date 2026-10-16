@@ -17,7 +17,7 @@ Walmart special.
 
 Danny filed the post down to a point with a nail file he stole from his sister, and now it's sharp enough to draw a dot of blood on my thumb when I test it.
 
-II was going to get an ice cube earlier, when Danny also called me a pussy then for even mentioning it.
+I was going to get an ice cube earlier, and Danny called me a pussy then too, for even mentioning it.
 
 No ice, my fingers are trembling and the lobe is hot red from being squeezed for so long.
 
@@ -25,7 +25,8 @@ No ice, my fingers are trembling and the lobe is hot red from being squeezed for
 
 "I'm lining it up."
 
-"You've been lining it up since the Simpsons. You can do it"
+"You've been lining it up since the Simpsons.
+You can do it."
 
 I pinch the lobe flat again, my index finger and thumb side by side to avoid the sharpened post when it comes through.
 
@@ -49,7 +50,7 @@ You are the man."
 
 I let go.
 
-There's blood blood on my earlobe and on my fingers.
+There's blood on my earlobe and on my fingers.
 
 I wipe it with toilet paper and look.
 
@@ -59,22 +60,26 @@ It looks like something a girl wears to prom.
 
 I smile at the mirror anyway, because Danny is watching, and because the guy in the mirror did a thing he was scared to do.
 
-I pick up the earring back off the piece of alcohol soaked toilet paper and gently push it over the end post.
+I pick up the earring back off the piece of alcohol-soaked toilet paper and gently push it over the end of the post.
 
-"Now cut the sharp end off" Danny says as he hands me the wire cutter pliers.
+"Now cut the sharp end off," Danny says as he hands me the wire cutters.
 
-I take the pliers-like cutters and gently hold then to the earring back and open them gently to straddle the post portion sticking out. I lean my head sideways over the sink and cup my hand to try t catch the sharp end of the post as I pause, then pull the cutters shut. 
+I take the cutters, hold them gently to the earring back, and open them to straddle the part of the post sticking out.
+I lean my head sideways over the sink and cup my hand to try to catch the sharp end of the post, pause, then pull the cutters shut.
 They make a click as the sharp end of the post breaks off.
 
 I look at my hand and see the dark sharp and shiny sliver of metal and shake it off my hand into the trash.
 
-"How long till I can switch - put in the skull earring" I ask.
+"How long till I can switch—put in the skull earring?" I ask.
 
-"Just a few days man. Any earlier and it will feel like repiercing your ear."
+"Just a few days, man.
+Any earlier and it will feel like repiercing your ear."
 
 "The guy at the mall said six weeks."
 
-"The guy at the mall is a loser and wants to sell you cleaning solution. And you're welcome fucker, I just saved you $30 for the piercing and who knows how much the cleaning saline was going to cost you."
+"The guy at the mall is a loser and wants to sell you cleaning solution.
+And you're welcome, fucker.
+I just saved you thirty bucks for the piercing, and who knows how much the cleaning saline was going to cost you."
 
 Next to the faucet, in its little plastic bag, the skull and crossbones is waiting, silver, with red glass in the eye sockets.
 
@@ -137,8 +142,8 @@ There's nothing to say to that.
 
 She picks the coffee back up and the electric company comes with it for a second, stuck to the bottom of the mug, and then peels off and falls.
 
-"Judy at work says old lady Ravensworth hires students every summer."
-"Up at the big house on Crest Road.
+"Judy at work says old lady Ravensworth hires students every summer.
+Up at the big house on Crest Road.
 She pays well, apparently."
 
 "Old lady Ravensworth?"
@@ -177,7 +182,7 @@ I don't know what they announced.
 
 She's turned around in her seat.
 
-She's looking right at me, I feel my face go hot.
+She's looking right at me, and I feel my face go hot.
 
 I look at the window, which is a mistake.
 
@@ -188,15 +193,15 @@ Her voice is friendly.
 That's worse.
 
 "Ah, not much," I say.
-After a pause I quickly remembered, "I'm going to be practicing guitar." 
-I don't actually own a guitar, but danny has been letting me use his.
+After a pause I quickly remember, "I'm going to be practicing guitar."
+I don't actually own a guitar, but Danny has been letting me use his.
 
 "Hm, cool."
 Was she being serious?
 
 She tucks her hair behind her ear.
 
-She has two small pearls in her ears, one in each, the way you're supposed to, they are beautiful on her.
+She has two small pearls in her ears, one in each, the way you're supposed to, and they are beautiful on her.
 
 "I'm working up at the Ravensworth house," she says.
 "In the house.
@@ -205,7 +210,7 @@ She shrugs.
 "They need groundskeepers.
 You should apply."
 
-"The Ravensworth house," I say nodding.
+"The Ravensworth house," I say, nodding.
 "Yeah.
 My mom said something about that."
 
@@ -246,8 +251,9 @@ You're going to a job."
 
 She leaves the bottle by the soap.
 
-I turn the shower on, wait for it to heat up and step in.
-I decide to give mom's tall and pearly shampoo bottle and conditioner a try. After squirting some out I reconsider as the strong smell of white flowers hits me, the kind you'd smell on a woman in an elevator and remember for the rest of the day.
+I turn the shower on, wait for it to heat up, and step in.
+I decide to give Mom's tall, pearly bottles of shampoo and conditioner a try.
+After squirting some out I reconsider as the strong smell of white flowers hits me, the kind you'd smell on a woman in an elevator and remember for the rest of the day.
 
 Following the directions, I leave the conditioner in for two minutes.
 
