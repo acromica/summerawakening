@@ -771,7 +771,7 @@ I unzip them.
 
 I take three sheets of Kleenex from the box on the back of the toilet.
 
-I lay them on the edge of the sink one on top of the other, and line up the corners so they match exactly, the way my mom folds napkins when we have company.
+I lay them on the edge of the sink one on top of the other, and line up the corners so they match exactly.
 
 They make one soft white square.
 
@@ -873,3 +873,5 @@ I straighten up and tuck my shirt in again and look around for Mr. Tobin, or for
 I turn around.
 
 It's Amber, in her black dress and white apron, standing at the screen door with a dish towel over her shoulder, and she's smiling at my ears.
+
+My face goes hot, all the way out to the diamonds.
