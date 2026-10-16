@@ -11,7 +11,7 @@ Genre and audience: erotic fiction, forced feminization, adult readers
 
 Length target:  about 80,000 words 
 
-What this book must never become: a boring book with cheap sex
+What this book must never become: a boring book with cheap sex; woke or overly focused on consent
 <!-- 5--10 concrete items, each with a one-line reason; mark each "hard limit" or "strong preference".
      Agents flag any suggestion that drifts toward an item and name it. -->
 
