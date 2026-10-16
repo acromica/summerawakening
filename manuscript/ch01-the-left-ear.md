@@ -297,31 +297,105 @@ Say ma'am."
 
 A woman opens the door before I can knock.
 
-She's wearing a plain gray dress and a white apron, and her dark hair is pulled back hard.
+She's wearing a plain gray dress and a white apron, and her dark hair is pulled back in a knot.
 
 She isn't wearing any makeup.
 
 She doesn't need any, which I notice and then try not to notice.
 
-"You are Chris Kelly," she says.
-
-"Yes, ma'am."
-
+"You must be Chris," she says, and smiles like she's glad it's me and not somebody else.
 "I'm Rosalina.
 I run the house staff.
-Come.
-She's in the morning room.
-Wipe your feet."
+Come in, come in.
+Mind the step."
 
-I wipe my feet.
+I mind the step.
 
 I follow her down a hall with a floor so polished I can see my blue shirt in it.
 
-Somewhere in the house a clock ticks loud enough to hear over our shoes.
+Her skirt stops just below the knee.
 
-The morning room is yellow.
+Under it she's wearing pantyhose, off-black and sheer, so her skin shows through them pale wherever the nylon stretches thin.
 
-Ms. Ravensworth is sitting in a straight chair by the window with a cup and saucer on a little table at her elbow, and she doesn't get up.
+At the back of each knee it stretches thinnest.
+
+I look at the floor.
+
+The floor shows me her legs again, upside down.
+
+She takes me through a swinging door into a small room off the kitchen, with a wooden table and a calendar on the wall and a bowl of lemons by the window.
+
+"Sit, sit.
+Do you want some water?
+It's going to be hot today."
+
+"No thank you.
+Ma'am."
+
+"Rosalina is fine."
+
+She pours me a glass anyway and sets it in front of me, and sits across the corner of the table with a clipboard on her lap.
+
+She crosses her legs.
+
+The nylon makes a small sound when she does it, a whisper, like a page turning.
+
+I drink the water.
+
+"So.
+Have you worked outside before?"
+
+"I mowed my neighbor's lawn.
+A couple of summers."
+
+"Good.
+You don't mind dirt?
+Sun?
+Bugs?"
+
+"No."
+
+"You will," she says, and laughs, and it's a nice laugh, low, like she's letting me in on it.
+
+She writes something down.
+
+Her foot bounces a little while she writes, and the light from the window slides along her shin and back, and I make myself look at the lemons.
+
+There are seven lemons.
+
+"We have a position as assistant gardener," she says.
+"You'd report to Mr. Tobin, he's the head gardener.
+He doesn't talk much, but he's fair.
+Monday through Saturday."
+
+"Okay."
+
+"White shirt, black pants.
+Every day.
+Not jeans, not ever, even black ones.
+She notices."
+She looks at me over the clipboard.
+"And always tidy.
+Shirt tucked in, hair neat, hands clean when you come up to the house.
+Like today."
+She tips her pen at my ponytail.
+"Today is good."
+
+"Thank you."
+
+"Don't thank me yet."
+
+She uncrosses her legs and stands, and smooths her apron down with both hands, and I stand up too fast and nearly take the chair with me.
+
+"Now she'll see you."
+
+Ms. Ravensworth's office is at the end of another hall, behind a door Rosalina knocks on twice and opens without waiting.
+
+It's all dark wood and green leather, with a desk the size of my mom's car and bookcases up to the ceiling.
+
+Somewhere in the room a clock ticks loud enough to hear over the air conditioner.
+
+Ms. Ravensworth is behind the desk with a cup and saucer at her elbow, and she doesn't get up.
 
 She's old, but not the way I pictured.
 
@@ -338,19 +412,11 @@ They start at my shoes and finish at my ear.
 
 I sit on the front half of the chair across from her.
 
-Rosalina leaves.
+Rosalina goes out, and the last thing I see of her is the back of one dark knee before the door clicks shut.
 
-The door clicks shut.
+"Rosalina tells me you have mowed a lawn," Ms. Ravensworth says.
 
-"Have you held a position before, Mr. Kelly?"
-
-"No, ma'am.
-Not a real one."
-
-"What is an unreal one?"
-
-"I mowed the neighbor's lawn.
-For a couple summers."
+"Yes, ma'am."
 
 "Did you mow it well?"
 
@@ -403,9 +469,53 @@ I look at her.
 
 "Yes, ma'am."
 
-She sips from the cup.
+She sips from the cup and sets it down without any sound at all.
 
-She sets it down without any sound at all.
+Then she looks at my ear again, and this time she keeps looking.
+
+"And what is that."
+
+My hand goes up to it before I can stop it.
+
+"It's an earring, ma'am."
+
+"I can see that it is an earring, Mr. Kelly."
+
+She gets up.
+
+She comes around the desk, slowly, and stands over my chair, and bends to look at it the way you'd look at a stain on a tablecloth.
+
+"One ear pierced is a gang member, Mr. Kelly.
+I don't have gang members in my garden.
+My guests walk in that garden.
+Some of them are senators."
+
+Her perfume comes down over me, powder and something sharper under it.
+
+"I'm sorry," she says, straightening up, "but I don't think—"
+
+She stops.
+
+She's standing right behind my shoulder, where my ponytail is.
+
+I hear her breathe in through her nose, once, slow, the way my mom smells a peach to see if it's ready.
+
+The clock ticks.
+
+I don't move.
+
+"What is in your hair?"
+
+"Conditioner," I say.
+"My mom's."
+
+She doesn't answer.
+
+She walks back around the desk and sits down and looks at me for a long time, and then she smiles.
+
+It's a real one this time.
+
+It goes all the way up.
 
 "Your hair is very clean," she says.
 
@@ -413,23 +523,12 @@ She sets it down without any sound at all.
 
 "It was not a compliment.
 It was an observation."
-She tilts her head and looks at it the way my mom looks at tomatoes at the store.
-"Who taught you to tie it like that?"
-
-"My mom."
-
-"Your mother has sense."
-
-She folds her hands.
-
-Her rings click together.
-
+She folds her hands, and her rings click together.
 "You seem a reasonable boy, Mr. Kelly.
 A little soft.
 A little vague.
 But reasonable boys can be molded, and I am very good at molding.
-I think you can be molded into the position.
-Assistant gardener."
+I think you can be molded into the position."
 
 "Thank you, ma'am."
 
@@ -438,52 +537,33 @@ Assistant gardener."
 "Sorry."
 
 "Eight dollars an hour to start.
-Monday through Saturday, seven until four.
-White shirt, black trousers.
-Not jeans.
-Not black jeans.
-Trousers.
-Mr. Tobin will give you gloves and boots."
+Seven until four.
+Mr. Tobin will give you gloves and boots.
+And the earring is not a problem."
 
-"Okay."
+"It isn't?"
 
-"And the earring."
-
-My hand goes up to it before I can stop it.
-
-"One ear pierced is a gang member, Mr. Kelly.
-I don't have gang members in my garden.
-My guests walk in that garden.
-Some of them are senators."
-She lets that sit.
-"Two ears is merely a fashion.
+"Not if you get two.
+Two ears is merely a fashion.
 I don't care for it, but I can tolerate a fashion.
-So.
-Take it out, or get the other one done.
-I don't mind which.
-But I will not have it lopsided."
+What I will not have is lopsided."
 
 I look at her.
 
-She looks at me.
+She looks at me, still smiling.
 
 "Okay," I say.
 
-She waits to see if I'm going to say which.
-
-I don't.
-
-I don't know which.
-
 "Monday," she says.
 "Seven.
+Both ears.
 Rosalina will see you out."
 
 * * *
 
 Rosalina sees me out.
 
-On the front steps she says, "She likes you," in a voice like she's telling me it might rain.
+On the front steps she squeezes my arm and says, "She likes you," like it's good news for both of us.
 
 "How can you tell?"
 
@@ -602,7 +682,7 @@ Ms. Ravensworth is standing at the top of the terrace steps in a pale blue dress
 
 "Don't let it go to your head."
 
-Her eyes go to my hair, and to where it falls over my ear, and she knows exactly what I'm doing and doesn't say so.
+Her eyes go to my left ear, then my right, and she gives one small nod.
 
 "Mr. Tobin will work you very hard," she says.
 "Most boys find the garden harder than they expect."
