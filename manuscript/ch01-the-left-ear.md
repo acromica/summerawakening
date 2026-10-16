@@ -58,11 +58,7 @@ There's a bead of blood under the stone.
 
 I wipe it with toilet paper and look.
 
-The diamond catches the light over the sink and throws it back at me.
-
-It's small.
-
-It's very bright.
+The diamond is small and very bright, and it catches the light over the sink and throws it back at me.
 
 It looks like something a girl wears to prom.
 
@@ -76,11 +72,7 @@ I smile at the mirror anyway, because Danny is watching, and because the guy in 
 
 "The guy at the mall wants to sell you cleaning solution."
 
-Next to the faucet, in its little plastic bag, the skull and crossbones is waiting.
-
-It's silver.
-
-It has red glass in the eye sockets.
+Next to the faucet, in its little plastic bag, the skull and crossbones is waiting, silver, with red glass in the eye sockets.
 
 It looks like something you'd wear to a fight.
 
@@ -237,15 +229,9 @@ Then the bell goes and she stands up, and the light runs all the way down both h
 
 * * *
 
-My interview is Saturday at ten.
+My interview is the Saturday after graduation, at ten.
 
-My mom has taken the morning off for it, which tells me how much it matters.
-
-She's ironed my one good shirt.
-
-It's blue.
-
-It's a little short in the arms.
+My mom has ironed my one good shirt, the blue one that's a little short in the arms, and laid it on my bed like it's going somewhere without me.
 
 "Shampoo," she says, standing in the bathroom door.
 "Twice.
@@ -272,11 +258,7 @@ I leave it in for two minutes.
 
 I rinse it out with cool water, because the bottle says that too.
 
-When I come out and brush it, my hair is different.
-
-It's heavier.
-
-It doesn't stick out at the ends.
+When I come out and brush it, my hair is different, heavier, with none of the usual frizz at the ends.
 
 It falls past my shoulders in one piece and when I turn my head it swings, and then it settles, the way hair does in commercials.
 
@@ -290,13 +272,9 @@ I don't know what silk feels like, but it feels like what I think silk feels lik
 "Low.
 Neat."
 
-She hands me one of her hair ties.
-
-It's black, with a little gold bead where the ends meet.
+She hands me one of her hair ties, black, with a little gold bead where the ends meet.
 
 I pull my hair back and loop it twice, and in the mirror there's a guy with a clean face and a smooth dark-blonde tail of hair down the back of his neck and a diamond in his left ear.
-
-He looks nice.
 
 He looks like someone your mom would like.
 
@@ -314,11 +292,7 @@ Just let her see your hair first."
 
 The Ravensworth house is at the top of Crest Road, behind a stone wall and a gate that's already open.
 
-The drive curves up through trees so you don't see the house until you're nearly at it, and then it's all at once.
-
-It's white.
-
-It has more windows than I can count from the car.
+The drive curves up through trees so you don't see the house until you're nearly at it, and then it's all at once, white, with more windows than I can count from the car.
 
 There are roses along the front in beds so neat they look combed.
 
@@ -578,13 +552,7 @@ I get in fast and pull my knees up.
 * * *
 
 <!-- AGENT-Q t5: revision-plan says "black pants (not jeans the letts)". I couldn't read "the letts" and wrote it as Ms. Ravensworth's "Not jeans. Not black jeans. Trousers." in scene 5. What did you mean? -->
-The shirts cost fourteen dollars each.
-
-The trousers cost twenty-two.
-
-I needed two of everything, because Ms. Ravensworth said Monday through Saturday and nobody wants to do laundry every night.
-
-That's seventy-two dollars, plus tax.
+Two white shirts and two pairs of black trousers came to seventy-two dollars, plus tax.
 
 My mom counted it out of her wallet at the kitchen table, in twenties and then fives and then ones, and she pressed her lips together on every bill.
 
@@ -602,23 +570,13 @@ The air is still cool.
 
 My new trousers have a crease down the front so sharp it looks drawn on, and they swish when I walk.
 
-I've done the math.
-
-Eight dollars an hour, nine hours, six days.
-
-Four hundred and thirty-two dollars a week, before they take whatever they take.
-
-The first week pays my mom back.
-
-The second week is mine.
+By my math the first week pays my mom back and the second week is mine.
 
 On the way up I pass the jewelry store on Main, the one with the green awning.
 
 It's closed, but the lights are on in the window.
 
-There's a bracelet in there on a little velvet hand.
-
-It's gold, with a row of small blue stones.
+There's a gold bracelet in there on a little velvet hand, with a row of small blue stones.
 
 My mom stopped in front of it in April and said "Oh," and then said "Don't be silly" to herself, and walked on.
 
@@ -645,17 +603,11 @@ That must be Mr. Tobin.
 
 He doesn't wave.
 
-Around the side, through the screen door, I can see a corner of the kitchen.
-
-It's big and white and full of shade.
-
-There's a ceiling fan turning.
+Around the side, through the screen door, I can see a corner of the kitchen, big and white and full of shade, with a ceiling fan turning.
 
 There's a long counter with a heap of green things on it, and a woman's arm, Rosalina's maybe, moving a knife up and down in a slow even rhythm.
 
-It looks cool in there.
-
-It looks very far away.
+It looks cool in there, and very far away.
 
 "Mr. Kelly."
 
@@ -670,8 +622,7 @@ Ms. Ravensworth is standing at the top of the terrace steps in a pale blue dress
 Her eyes go to my hair, and to where it falls over my ear, and she knows exactly what I'm doing and doesn't say so.
 
 "Mr. Tobin will work you very hard," she says.
-"Most boys find the garden harder than they expect.
-Some of them find it too hard."
+"Most boys find the garden harder than they expect."
 
 "I'll be okay."
 
@@ -685,12 +636,6 @@ She turns and goes inside.
 Mr. Tobin picks up a shovel and holds it out to me, handle first.
 
 Before I take it I look at my hands.
-
-They're pale.
-
-They're clean.
-
-I scrubbed them last night without thinking about it, the way you do before a first day.
 
 My nails are short and pink and there's nothing under them at all.
 
