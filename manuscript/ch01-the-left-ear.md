@@ -771,7 +771,17 @@ I unzip them.
 
 I take three sheets of Kleenex from the box on the back of the toilet.
 
-I hold myself and start to stroke, slow, with my free hand on the edge of the sink, looking at the diamonds.
+I lay them on the edge of the sink one on top of the other, and line up the corners so they match exactly, the way my mom folds napkins when we have company.
+
+They make one soft white square.
+
+I pick it up and wrap it around my shaft, careful, so it doesn't tear.
+
+It's so thin I can feel the heat of my own hand through it.
+
+I close my fingers around it and slide my hand up, and down, slow, and the Kleenex rubs across me, soft and a little dry, catching and then letting go.
+
+I watch the diamonds.
 
 Left.
 
@@ -781,17 +791,27 @@ Then I close my eyes.
 
 Rosalina's nails, pale and shining, tapping on the clipboard.
 
-Her pen tipping at my hair.
-
 The whisper the nylon made when she crossed her legs.
 
 The back of her knee, where it was thinnest, going out the door.
 
-I come so fast it surprises me, all at once, into the tissues, and I have to grab the sink to stay up.
+I think this is what it would feel like.
+
+Her pantyhose, sheer and dark, against me.
+
+Sliding across them, with her skin just under, warm through the nylon.
+
+My hand goes faster.
+
+I come so fast it surprises me, and harder than I ever have, all at once, into the Kleenex.
+
+It doesn't stop.
+
+It keeps pulsing, again, and again, and again, more times than I knew it could, and I have to grab the sink with my other hand to stay up.
 
 I stand there breathing.
 
-I've never been that fast.
+I've never been like that.
 
 Not even close.
 
